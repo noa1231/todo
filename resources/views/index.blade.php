@@ -32,7 +32,7 @@
       <button>更新</button>
       </td>
       <td>
-      <form action="/todo/delete" method="post">
+      <form action="{{ route('todo.delete', ['id' => 1]) }}" method="post">
         @csrf
       <button type="submit">削除</button>
       </form>
