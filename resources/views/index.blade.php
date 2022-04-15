@@ -32,7 +32,10 @@
       <button>更新</button>
       </td>
       <td>
-      <button>削除</button>
+      <form action="/todo/delete" method="post">
+        @csrf
+      <button type="submit">削除</button>
+      </form>
       </td>
     </tr>
     @endforeach

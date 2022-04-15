@@ -19,12 +19,10 @@ class TodoController extends Controller
         Todo::create($form);
         return redirect('/');
     }
-    public function update(Request $request)
-    {
-
-    }
     public function delete(Request $request)
     {
-        
+        $author = Todo::find($request->id);
+        $author->delete;
+        return redirect('/');
     }
 }
