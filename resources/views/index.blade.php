@@ -29,10 +29,13 @@
       <input type="text" value="{{$item->content}}">
       </td>
       <td>
-      <button>更新</button>
+      <form action="{{ route('todo.update',[$item->content]) }}" method="post">
+        @csrf
+      <button type="button">更新</button>
+      </form>
       </td>
       <td>
-      <form action="{{ route('todo.delete',[$item->id]) }}" method="post">
+      <form action="{{ route('todo.delete',['id' => $item->id]) }}" method="post">
         @csrf
       <button type="submit">削除</button>
       </form>

@@ -25,4 +25,10 @@ class TodoController extends Controller
         $author->delete();
         return redirect('/');
     }
+    public function update(Request $request)
+    {
+        $inputs = $request->all();
+        Todo::where('content', $request->content)->update($inputs);
+        return redirect('/');
+    }
 }
