@@ -26,7 +26,7 @@
       {{$item->created_at}}
       </td>
       <td>
-      <form action="{{ route('todo.update',['id' => $item->content]) }}" method="post">
+      <form action="{{ route('todo.update',[$item->content]) }}" method="post">
         @csrf
       <input type="text" value="{{$item->content}}">
       <button type="button">更新</button>
