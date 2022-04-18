@@ -7,7 +7,7 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Todo List</h1>
+  <h2>Todo List</h2>
   <form action="/todo/create" method="post">
     @csrf
     <input type="text" name="content">
@@ -28,7 +28,9 @@
       <td>
       <form action="{{ route('todo.update',[$item->content]) }}" method="post">
         @csrf
-      <input type="text" value="{{$item->content}}">
+      <input type="text" name="content" value="{{$item->content}}">
+      </td>
+      <td>
       <button type="button">更新</button>
       </form>
       </td>
