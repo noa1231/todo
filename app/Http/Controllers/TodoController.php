@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Todo;
 use Illuminate\Support\Facades\DB;
+use App\Http\Requests\TodotRequest;
 
 class TodoController extends Controller
 {
@@ -13,7 +14,7 @@ class TodoController extends Controller
         $items = Todo::all();
         return view('index', ['items' => $items]);
     }   
-    public function create(Request $request)
+    public function create(TodotRequest $request)
     {
         $form = $request->all();
         Todo::create($form);
@@ -28,7 +29,7 @@ class TodoController extends Controller
     public function update(Request $request)
     {
         $inputs = $request->all();
-        Todo::where('content', $request->content)->update($inputs);
+        Todo::where('id', $request->id)->update(['content'=> $request->content]);
         return redirect('/');
     }
 }

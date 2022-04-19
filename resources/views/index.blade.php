@@ -28,10 +28,11 @@
       <td>
       <form action="{{ route('todo.update',[$item->content]) }}" method="post">
         @csrf
+      <input type="hidden" name="id" value="{{$item->id}}">
       <input type="text" name="content" value="{{$item->content}}">
       </td>
       <td>
-      <button type="button">更新</button>
+      <button type="submit">更新</button>
       </form>
       </td>
       <td>
