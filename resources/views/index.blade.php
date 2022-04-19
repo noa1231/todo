@@ -12,6 +12,9 @@
     @csrf
     <input type="text" name="content">
     <input type="submit" value="追加">
+    @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+    @endforeach
   </form>
   <table>
     <tr>
